@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="openjfx.javafx.web" type="repository">
+    <properties maven-id="org.openjfx:javafx-web:21" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/javafx-web-21.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javafx-web-21-mac-aarch64.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javafx-controls-21.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javafx-controls-21-mac-aarch64.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javafx-graphics-21.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javafx-graphics-21-mac-aarch64.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javafx-base-21.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javafx-base-21-mac-aarch64.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javafx-media-21.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javafx-media-21-mac-aarch64.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
