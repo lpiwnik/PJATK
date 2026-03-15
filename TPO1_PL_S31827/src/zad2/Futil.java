@@ -1,8 +1,10 @@
 package zad2;
 
 import java.io.IOException;
+import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
+import java.nio.charset.CharsetDecoder;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
@@ -20,12 +22,12 @@ public class Futil {
             Files.walkFileTree(Path.of(dirName), new SimpleFileVisitor<Path>() {
                 @Override
                 public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-                    final List<String> lines = Files.readAllLines(file, Charset.forName("Cp1250"));
+                    String content =  Charset.forName("Cp1250")
+                            .decode(
+                                    ByteBuffer.wrap(Files.readAllBytes(file))
+                            ).toString();
 
-                    String content = String.join("\n", lines) + "\n";
-
-                    channel.write(StandardCharsets.UTF_8.encode(content));
-
+                    channel.write(StandardCharsets.UTF_8.encode(content + "\n"));
 
                     return FileVisitResult.CONTINUE;
                 }
