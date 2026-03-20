@@ -92,6 +92,7 @@ public class MainView extends JFrame {
 
     private void refreshData(String city, String currency) {
         try {
+            String countryCurrency = Utils.getCurrencyCode(service.getCountry());
             Double rateNBP = service.getNBPRate();
             Double rateEx = service.getRateFor(currency);
             service.getWeather(city);
@@ -103,8 +104,8 @@ public class MainView extends JFrame {
                 weatherInfo.setText(String.format("Weather: %s°C, %s",
                         service.getWeather().main().get("temp"),
                         service.getWeather().weather().getFirst().get("description")));
-                nbpInfo.setText(String.format("NBP (PLN): %.4f", rateNBP));
-                exchInfo.setText(String.format("Exch (%s): %.4f", currency, rateEx));
+                nbpInfo.setText(String.format("NBP 1 (%s) = %.4f (PLN)",countryCurrency, rateNBP));
+                exchInfo.setText(String.format("Exch 1 (%s) = %.4f (%s)" ,currency,rateEx,countryCurrency));
 
                 dataRow.add(weatherInfo);
                 dataRow.add(nbpInfo);

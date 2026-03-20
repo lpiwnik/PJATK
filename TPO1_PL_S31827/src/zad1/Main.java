@@ -16,6 +16,8 @@ public class Main {
     String weatherJson = s.getWeather("Warsaw");
     Double rate1 = s.getRateFor("USD");
     Double rate2 = s.getNBPRate();
+
+    System.out.println(weatherJson);
     //...
     // część uruchamiająca GUI
     SwingUtilities.invokeLater( () -> {

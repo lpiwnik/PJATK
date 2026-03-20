@@ -31,7 +31,7 @@ public class Service {
 
     public String getWeather(String city) throws NullPointerException {
         this.city=city;
-        this.weather=WeatherService.getWeather(getCountry(), city);
+        this.weather=WeatherService.getWeatherOld(getCountry(), city);
         return String.valueOf(weather);
     }
 
@@ -69,6 +69,7 @@ public class Service {
                 .orElse(0.0);
         return mid;
     }
+
 
     public String getCountry() {
         return country;
